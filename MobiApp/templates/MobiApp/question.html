@@ -1,0 +1,35 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Faculty Member Page - Question.
+{% endcomment %}
+
+{% block head %}
+    <title>Question | MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>LMS Question</h1>
+    </header>
+
+    <h3>Welcome {{ user.username }},</h3>
+
+    <p><a href="/faculty_member/">Home</a></br>
+    <a href="/faculty_member/create_question/">Create Question</a></br>
+    <a href="/logout/">Logout</a></p>
+
+    <p>Questions</p>
+    {% if question_list %}
+    <ul>
+        {% for question in question_list %}
+            <li><a href="/faculty_member/update_question/{{ question.id }}">{{ question.quiz }} {{ question.question_text }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <li><p>No Question</p></li>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+
+{% endblock %}

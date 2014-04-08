@@ -1,0 +1,30 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Administrator Page - Update Assign.
+{% endcomment %}
+
+{% block head %}
+    <title>Update Assign | MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>LMS Update Assign</h1>
+    </header>
+
+    <h3>Welcome {{ user.username }},</h3>
+
+    <p><a href="/administrator/">Home</a></br>
+    <a href="/logout/">Logout</a></p>
+
+    <section>
+        {% load crispy_forms_tags %}
+
+        {% block content %}
+            {% crispy form %}
+            <a href="/administrator/update_assign/{{ acf_id }}/delete/">Delete</a></br>
+        {% endblock %}
+    </section>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Student Page - Start Quiz.
+{% endcomment %}
+
+{% block head %}
+    <title>Quiz Result | MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>LMS Quiz Result</h1>
+    </header>
+
+    <h3>Welcome {{ user.username }},</h3>
+
+    <p><a href="/faculty_member/">Home</a></br>
+    <a href="/logout/">Logout</a></p>
+
+    <p>Quiz Result</p>
+    {% if quiz_result %}
+    <ul>
+        {% for result in quiz_result %}
+            <li>{{ result }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <li><p>No Result Found</p></li>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+
+{% endblock %}

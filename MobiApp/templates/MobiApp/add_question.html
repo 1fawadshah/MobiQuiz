@@ -1,0 +1,29 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Faculty Member Page - Create Question.
+{% endcomment %}
+
+{% block head %}
+    <title>Create Question | MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>LMS Create Question</h1>
+    </header>
+
+    <h3>Welcome {{ user.username }},</h3>
+
+    <p><a href="/faculty_member/">Home</a></br>
+    <a href="/logout/">Logout</a></p>
+
+    <section>
+        {% load crispy_forms_tags %}
+
+        {% block content %}
+            {% crispy form %}
+        {% endblock %}
+    </section>
+
+{% endblock %}

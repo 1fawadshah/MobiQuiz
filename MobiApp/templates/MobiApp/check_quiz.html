@@ -1,0 +1,34 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Faculty Member Page - Check Quiz.
+{% endcomment %}
+
+{% block head %}
+    <title>Check Quiz | MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>LMS Check Quiz</h1>
+    </header>
+
+    <h3>Welcome {{ user.username }},</h3>
+
+    <p><a href="/faculty_member/">Home</a></br>
+    <a href="/logout/">Logout</a></p>
+
+    <p>Check Quiz</p>
+    {% if list_quiz %}
+    <ul>
+        {% for quiz in list_quiz %}
+            <li><a href="/faculty_member/check_quiz/{{ quiz.id }}">{{ quiz }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <li><p>Empty</p></li>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+
+{% endblock %}

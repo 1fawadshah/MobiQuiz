@@ -1,0 +1,35 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Administrator Page - Enroll Student to Semester.
+{% endcomment %}
+
+{% block head %}
+    <title>Enroll Student to Semester | MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>LMS Enroll Student to Semester</h1>
+    </header>
+
+    <h3>Welcome {{ user.username }},</h3>
+
+    <p><a href="/administrator/">Home</a></br>
+    <a href="/administrator/enroll/">Enroll New</a></br>
+    <a href="/logout/">Logout</a></p>
+
+    <p>Enrollments</p>
+    {% if enroll_list %}
+    <ul>
+        {% for enroll in enroll_list %}
+            <li><a href="/administrator/update_enroll/{{ enroll.id }}">{{ enroll.user }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <li><p>No Enrollment</p></li>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+
+{% endblock %}

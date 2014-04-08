@@ -1,0 +1,43 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Students homepage after logging in.
+{% endcomment %}
+
+{% block head %}
+    <title>Student | MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+
+    <header>
+        <h1><p style="text-align: left; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">LMS Student Area</p></h1>
+    </header>
+
+    <h3><p style="text-align: left; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">Welcome {{ user.username }},</p></h3>
+
+    <section>
+    <table width="300" border="0">
+  <tr>
+    <td width="150"><div align="left" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/student/">Home</a></div></td>
+    <td width="150"><div align="left" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/logout/">Logout</a></div></td>
+  </tr>
+    </table>
+    </br>
+
+<table border="0">
+  <tr>
+    <td width="245" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/student/start_quiz/">Start Quiz</a></td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/student/quiz_results">Quiz Results</a></td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/student/grade_book">Grade Book</a></td>
+  </tr>
+</table>
+    </section>
+
+    {% block content %}{% endblock %}
+
+{% endblock %}

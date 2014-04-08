@@ -1,0 +1,35 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Administrator Page - Assign Course to Faculty Member.
+{% endcomment %}
+
+{% block head %}
+    <title>Assign Course to Faculty Member | MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>LMS Assign Course to Faculty Member</h1>
+    </header>
+
+    <h3>Welcome {{ user.username }},</h3>
+
+    <p><a href="/administrator/">Home</a></br>
+    <a href="/administrator/assign/">Assign New</a></br>
+    <a href="/logout/">Logout</a></p>
+
+    <p>Assignments</p>
+    {% if assign_list %}
+    <ul>
+        {% for assign in assign_list %}
+            <li><a href="/administrator/update_assign/{{ assign.id }}">{{ assign.user }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <li><p>No Assignment</p></li>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+
+{% endblock %}

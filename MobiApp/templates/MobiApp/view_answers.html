@@ -1,0 +1,34 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Faculty Member Page - View Answers.
+{% endcomment %}
+
+{% block head %}
+    <title>View Answers | MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>LMS View Answers</h1>
+    </header>
+
+    <h3>Welcome {{ user.username }},</h3>
+
+    <p><a href="/faculty_member/">Home</a></br>
+    <a href="/logout/">Logout</a></p>
+
+    <p>View Answers</p>
+    {% if view_answers_list %}
+    <ul>
+        {% for view in view_answers_list %}
+            <li>{{ view }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <li><p>Empty</p></li>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+
+{% endblock %}

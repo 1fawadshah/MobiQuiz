@@ -1,0 +1,30 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Administrator Page - Edit Course.
+{% endcomment %}
+
+{% block head %}
+    <title>Edit Course | MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>LMS Edit Course</h1>
+    </header>
+
+    <h3>Welcome {{ user.username }},</h3>
+
+    <p><a href="/administrator/">Home</a></br>
+    <a href="/logout/">Logout</a></p>
+
+    <section>
+        {% load crispy_forms_tags %}
+
+        {% block content %}
+            {% crispy form %}
+            <a href="/administrator/edit_course/{{ cou_id }}/delete/">Delete</a></br>
+        {% endblock %}
+    </section>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Faculty Member Page - Update Question.
+{% endcomment %}
+
+{% block head %}
+    <title>Update Question | MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>LMS Update Question</h1>
+    </header>
+
+    <h3>Welcome {{ user.username }},</h3>
+
+    <p><a href="/faculty_member/">Home</a></br>
+    <a href="/logout/">Logout</a></p>
+
+    <section>
+        {% load crispy_forms_tags %}
+
+        {% block content %}
+            {% crispy form %}
+            <a href="/faculty_member/update_question/{{ ques_id }}/delete/">Delete</a></br>
+        {% endblock %}
+    </section>
+
+{% endblock %}

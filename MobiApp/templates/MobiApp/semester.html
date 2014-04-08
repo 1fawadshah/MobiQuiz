@@ -1,0 +1,35 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Administrator Page - Semesters.
+{% endcomment %}
+
+{% block head %}
+    <title>Semesters | MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>LMS Semesters</h1>
+    </header>
+
+    <h3>Welcome {{ user.username }},</h3>
+
+    <p><a href="/administrator/">Home</a></br>
+    <a href="/administrator/add_semester/">Add Semester</a></br>
+    <a href="/logout/">Logout</a></p>
+
+    <p>Semesters</p>
+    {% if semester_list %}
+    <ul>
+        {% for semesters in semester_list %}
+            <li><a href="/administrator/edit_semester/{{ semesters.id }}">{{ semesters.degree }} {{ semesters.semester_no }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <li><p>No Semester Available</p></li>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+
+{% endblock %}

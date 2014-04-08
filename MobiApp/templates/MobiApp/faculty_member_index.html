@@ -1,0 +1,49 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Faculty members homepage after logging in.
+{% endcomment %}
+
+{% block head %}
+    <title>Faculty Members | MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+
+    <header>
+        <h1><p style="text-align: left; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">LMS Faculty Member Area</p></h1>
+    </header>
+
+    <h3><p style="text-align: left; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">Welcome {{ user.username }},</p></h3>
+
+    <section>
+    <table width="300" border="0">
+  <tr>
+    <td width="150"><div align="left" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/faculty_member/">Home</a></div></td>
+    <td width="150"><div align="left" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/logout/">Logout</a></div></td>
+  </tr>
+</table>
+</br>
+
+<table border="0">
+  <tr>
+    <td width="245" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/faculty_member/question/">Create Question</a></td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/faculty_member/quiz/">Create Quiz</a></td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/faculty_member/view_answers/">View Answers</a></td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/faculty_member/check_quiz/">Check Quiz</a></td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/faculty_member/results/">Results</a></td>
+  </tr>
+</table>
+    </section>
+
+    {% block content %}{% endblock %}
+
+{% endblock %}

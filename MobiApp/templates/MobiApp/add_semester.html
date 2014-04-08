@@ -1,0 +1,29 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Administrator Page - Add Semester.
+{% endcomment %}
+
+{% block head %}
+    <title>Add Semester | MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>LMS Add Semester</h1>
+    </header>
+
+    <h3>Welcome {{ user.username }},</h3>
+
+    <p><a href="/administrator/">Home</a></br>
+    <a href="/logout/">Logout</a></p>
+
+    <section>
+        {% load crispy_forms_tags %}
+
+        {% block content %}
+            {% crispy form %}
+        {% endblock %}
+    </section>
+
+{% endblock %}

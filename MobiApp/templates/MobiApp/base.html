@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% load staticfiles %}
+    <p style="text-align: left"><img src="{% static "Logo.png" %}" width="156" height="63"  alt=""/></p>
+    {% block body %}{% endblock %}
+
+    <footer>
+        <span><p style="text-align: left; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size: 14px;">&copy; 2014, MobiQuiz LMS - All rights reserved.</p></span>
+    </footer>
+</body>
+</html>

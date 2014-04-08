@@ -1,0 +1,36 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Faculty Member Page - Check Quiz Instance.
+{% endcomment %}
+
+{% block head %}
+    <title>Check Quiz Instance| MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>LMS Check Quiz Instance</h1>
+    </header>
+
+    <h3>Welcome {{ user.username }},</h3>
+
+    <p><a href="/faculty_member/">Home</a></br>
+    <a href="/logout/">Logout</a></p>
+
+    <p>Check Quiz Instance</p>
+    {% if all_answers %}
+    <ul>
+        {% for answers in all_answers %}
+            <li>User: {{ answers.userinformation }} </br> Quiz: {{ answers.question.quiz }} </br>
+                Question: {{ answers.question.question_text }} </br> Answer Given: {{ answers.option_select }} </br>
+                Correct Answer: {{ answers.question.option_correct }} </br> </br> </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <li><p>Empty</p></li>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+
+{% endblock %}

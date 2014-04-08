@@ -1,0 +1,35 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Administrator Page - Course Management.
+{% endcomment %}
+
+{% block head %}
+    <title>Course Management | MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>LMS Course Management</h1>
+    </header>
+
+    <h3>Welcome {{ user.username }},</h3>
+
+    <p><a href="/administrator/">Home</a></br>
+    <a href="/administrator/add_course/">Add Course</a></br>
+    <a href="/logout/">Logout</a></p>
+
+    <p>Degree Courses</p>
+    {% if course_list %}
+    <ul>
+        {% for courses in course_list %}
+            <li><a href="/administrator/edit_course/{{ courses.id }}">{{ courses.course_code }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <li><p>No Course Available</p></li>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Main LMS Login / Index Page.
+{% endcomment %}
+
+{% block head %}
+    <title>Login | MobiQuiz LMS</title>
+{% endblock %}
+
+{% block body %}
+
+<p style="text-align: left; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size: 36px;">Sign in to MobiQuiz</p>
+
+    <p style="text-align: center">
+        {% load crispy_forms_tags %}
+
+        {% block content %}
+            {% crispy form %}
+        {% endblock %}
+    </p>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Administrator Page - Degree Program Management.
+{% endcomment %}
+
+{% block head %}
+    <title>Degree Program Management | MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>LMS Degree Program Management</h1>
+    </header>
+
+    <h3>Welcome {{ user.username }},</h3>
+
+    <p><a href="/administrator/">Home</a></br>
+    <a href="/administrator/add_degree_program/">Add Degree Program</a></br>
+    <a href="/logout/">Logout</a></p>
+
+    <p>Degree Programs</p>
+    {% if degree_program_list %}
+    <ul>
+        {% for degrees in degree_program_list %}
+            <li><a href="/administrator/edit_degree_program/{{ degrees.id }}">{{ degrees.degree_code }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <li><p>No Degree Available</p></li>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+
+{% endblock %}

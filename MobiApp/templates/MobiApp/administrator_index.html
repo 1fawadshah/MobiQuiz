@@ -1,0 +1,52 @@
+{% extends "MobiApp/base.html" %}
+
+{% comment %}
+    Administrators homepage after logging in.
+{% endcomment %}
+
+{% block head %}
+    <title xmlns="http://www.w3.org/1999/html">Administrator | MobiQuiz LMS{% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1><p style="text-align: left; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">LMS Administrator Area</p></h1>
+    </header>
+
+    <h3><p style="text-align: left; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">Welcome {{ user.username }},</p></h3>
+
+    <section>
+
+    <table width="300" border="0">
+  <tr>
+    <td width="150"><div align="left" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/administrator/">Home</a></div></td>
+    <td width="150"><div align="left" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/logout/">Logout</a></div></td>
+  </tr>
+</table>
+</br>
+<table border="0">
+  <tr>
+    <td width="245" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/administrator/user_management/">User Management</a></td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/administrator/course_management/">Course Management</a></td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/administrator/degree_program_management/">Degree Program Management</a></td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/administrator/semester/">Add Semester</a></td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/administrator/assign_course_faculty/">Assign Course to Faculty Member</a></td>
+  </tr>
+  <tr>
+    <td style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif"><a href="/administrator/enroll_student_semester/">Enroll Student to Semester</a></td>
+  </tr>
+</table>
+
+    </section>
+
+    {% block content %}{% endblock %}
+
+{% endblock %}
